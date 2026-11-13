@@ -22,11 +22,16 @@ estadisticas = {
     "Empate": "empates",
 }
 
-while True:
-    jugador = input("Escribe tu nombre: ").strip()
-    if jugador:
-        break
-    print("El nombre no puede estar vacío.")
+
+def solicitar_nombre():
+    while True:
+        nombre = input("Escribe tu nombre: ").strip()
+        if nombre:
+            return nombre
+        print("El nombre no puede estar vacío.")
+
+
+jugador = solicitar_nombre()
 
 while True:
     print("\n1. Partida nueva")
@@ -67,6 +72,18 @@ while True:
             (jugador, eleccion_jugador, eleccion_computadora, resultado),
         )
         conexion.commit()
+
+        while True:
+            print("\n1. Jugar como otro jugador")
+            print("2. Continuar con el mismo jugador")
+            opcion_jugador = input("Selecciona una opción: ").strip()
+
+            if opcion_jugador == "1":
+                jugador = solicitar_nombre()
+                break
+            if opcion_jugador == "2":
+                break
+            print("Opción inválida. Elige 1 o 2.")
     elif opcion_menu == "2":
         print("\nEstadísticas anteriores:")
         for resultado_partida, nombre in estadisticas.items():
