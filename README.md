@@ -10,8 +10,8 @@ Organización:	Mezcla ingreso de datos, menús, lógica del juego y consultas SQ
 
 
 Además:
-1. Acepta nombres vacíos. Si se ingresa Enter o espacios, permite jugar y guarda las partidas sin nombre. Lo comprobé ejecutándolo.
-2. Las estadísticas distinguen mayúsculas y minúsculas. «Juan» y «juan» se consideran jugadores diferentes, por lo que pueden quedar estadísticas separadas para la misma persona.
+1. El programa solicita nuevamente el nombre si se ingresa vacío o solo con espacios.
+2. Las estadísticas no distinguen mayúsculas y minúsculas: «Juan» y «juan» se consideran la misma persona.
 3. No permite cambiar de jugador durante la ejecución. Para ingresar otro nombre hay que cerrar y volver a ejecutar el programa.
 4. El README está incompleto. Identifica al equipo, pero no explica cómo ejecutar el juego ni consultar las estadísticas.
 5. Hay un archivo vacío sobrante, llamado piedra_papel_o_tijera, sin extensión.

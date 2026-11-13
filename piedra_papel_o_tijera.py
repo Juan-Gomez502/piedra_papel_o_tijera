@@ -22,7 +22,11 @@ estadisticas = {
     "Empate": "empates",
 }
 
-jugador = input("Escribe tu nombre: ").strip()
+while True:
+    jugador = input("Escribe tu nombre: ").strip()
+    if jugador:
+        break
+    print("El nombre no puede estar vacío.")
 
 while True:
     print("\n1. Partida nueva")
@@ -68,7 +72,7 @@ while True:
         for resultado_partida, nombre in estadisticas.items():
             cursor.execute(
                 "SELECT COUNT(*) FROM resultados "
-                "WHERE jugador = ? AND resultado = ?",
+                "WHERE jugador = ? COLLATE NOCASE AND resultado = ?",
                 (jugador, resultado_partida),
             )
             cantidad = cursor.fetchone()[0]
